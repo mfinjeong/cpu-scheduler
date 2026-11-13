@@ -1,4 +1,8 @@
-// Kontrak engine sesuai ADR-002. Perubahan wajib lewat software-architect (PRD §13.3).
+// simulate menerima input ternormalisasi: angka bertipe number dan ID string tanpa spasi tepi.
+// Parsing teks dan trim ID hanya dilakukan parseInput; simulate menolak input mentah
+// dengan SimulationValidationError, tanpa hasil parsial. Quantum hanya divalidasi untuk RR.
+// Pada waktu sama: COMPLETE/QUANTUM_EXPIRED, ARRIVAL (AT lalu urutan input),
+// REQUEUE, lalu DISPATCH/IDLE_START/ALL_DONE. Perubahan kontrak perlu review arsitek.
 
 export type Algorithm = 'FCFS' | 'SJF' | 'RR';
 
